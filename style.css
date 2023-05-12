@@ -1,0 +1,46 @@
+*{
+    font-family : 'poppins',sans-serif;
+    font-size : 12pt;
+}
+
+.container{
+    margin: 0px 60px 0px 60px;
+}
+
+.form{
+    display : flex;
+    justify-content : center;
+    align-items: center;
+    width: 50rem;
+    border: 2px solid black;
+}
+
+.btn{
+    margin-top:5px;
+    background-color : none;
+    border : 2px solid rgb(46, 46, 180);
+    border-radius : 50px;
+    width : 100px;
+    height : 45px;
+    color : rgb(46, 46, 180);
+}
+
+.btn:hover{
+    background-color : rgb(46, 46, 180);
+    border : none;
+    border-radius : 50px;
+    color : white;
+}
+
+.inputText{
+    display : block;
+    border : 2px solid rgb(46, 46, 180);
+    border-radius : 5px;
+    height : 35px;
+    width : 20rem;
+    background-color: rgb(57, 72, 103);
+}
+
+.lbl{
+    display : block; 
+}

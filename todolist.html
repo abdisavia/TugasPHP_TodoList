@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login</title>
+</head>
+<body>
+    <form action="" method="post">
+        <h1>TO DO LIST</h1>
+        <label for="todo">To DO :</label>
+        <input type='text' name="todo">
+        <button type="submit" name="add">add</button>
+    <?php
+    $list = mysqli_query($conn, "SELECT * FROM list");
+    $idAkun = $_SESSION['id'];
+    if($list===false){
+        echo"Error Exception : ".mysqli_error($conn);
+    }
+    if(mysqli_num_rows($list) > 0){
+        echo "<table>
+                  <tr>
+                    <th>To Do</th>
+                    <th>Done</th>
+                  </tr>";
+        while($row = mysqli_fetch_assoc($list)){
+            if($row['AKUNID'] == $idAkun){
+                echo "<tr>
+                        <td>";
+                        echo $row["todo"]; 
+                        echo "</td>
+                        <td><a href=\"delete.php?id="; echo $row["LISTID"]; echo"\">delete</a></td>
+                      </tr>";
+                    }
+                }
+                echo "</table>";
+            }
+        ?>
+
+                
+    </form>
+    <a href="logout.php">logout</a>
+    <br>
+</body>
+</html>
